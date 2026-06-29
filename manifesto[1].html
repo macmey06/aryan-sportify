@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Manifesto — Aryan Kumar Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#080E1C;--navy2:#0F1A2E;--card:#111B30;--orange:#FF5722;--gold:#FFC107;--teal:#00BCD4;--white:#F8F9FC;--muted:#7A8BA0;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(8,14,28,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:3px;color:var(--orange);text-decoration:none}
+.nav-logo span{color:var(--white)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.hamburger{display:none;background:none;border:1px solid var(--border);color:var(--white);width:40px;height:40px;border-radius:8px;cursor:pointer;font-size:1.2rem;align-items:center;justify-content:center;transition:border-color 0.2s}
+.hamburger:hover{border-color:var(--orange);color:var(--orange)}
+.mobile-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(8,14,28,0.98);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem}
+.mobile-overlay.open{display:flex}
+.mobile-overlay a{font-family:'Bebas Neue',cursive;font-size:2.5rem;letter-spacing:3px;color:var(--white);text-decoration:none;transition:color 0.2s}
+.mobile-overlay a:hover{color:var(--orange)}
+.mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--border);color:var(--white);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.3rem}
+section{padding:6rem 4rem}
+.section-label{font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:0.5rem}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,4vw,3.5rem);letter-spacing:2px;color:var(--white);margin-bottom:1rem}
+.section-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:2px;margin-bottom:3rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:0.8rem}
+footer span{color:var(--orange)}
+.page-hero{min-height:35vh;display:flex;align-items:flex-end;padding:8rem 4rem 3rem;background:linear-gradient(180deg,rgba(255,87,34,0.07),transparent)}
+.page-hero h1{font-family:'Bebas Neue',cursive;font-size:clamp(3rem,6vw,5rem);letter-spacing:3px}
+.page-hero p{color:var(--muted);font-size:1rem;margin-top:0.5rem}
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 1.25rem}
+  .page-hero{padding:7rem 1.25rem 2rem}
+}
+</style>
+<style>
+.manifesto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.manifesto-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s}
+.manifesto-card:hover{transform:translateY(-5px);border-color:rgba(255,87,34,0.35);box-shadow:0 16px 48px rgba(255,87,34,0.1)}
+.manifesto-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,87,34,0.05),transparent 60%);pointer-events:none}
+.card-num{font-family:'Bebas Neue',cursive;font-size:4rem;line-height:1;color:rgba(255,87,34,0.12);position:absolute;top:1rem;right:1.5rem}
+.card-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.card-title{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:1px;color:var(--white);margin-bottom:0.75rem}
+.card-detail{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.card-caption{font-size:0.78rem;font-style:italic;color:var(--orange);font-weight:500}
+@media(max-width:768px){.manifesto-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="index.html">SPORT<span>IFY</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="track-record.html">Experience</a></li><li><a href="manifesto.html" class="active">Manifesto</a></li><li><a href="index.html#connect">Connect</a></li></ul><button class="hamburger" onclick="openMobileMenu()">☰</button></nav>
+<div class="mobile-overlay" id="mobile-overlay">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="track-record.html" onclick="closeMobileMenu()">Experience</a>
+  <a href="manifesto.html" onclick="closeMobileMenu()">Manifesto</a>
+  <a href="index.html#connect" onclick="closeMobileMenu()">Connect</a>
+</div>
+<script>
+function openMobileMenu(){document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileMenu(){document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow=''}
+(function(){
+  var css=localStorage.getItem('aks_css');
+  if(css){var el=document.createElement('style');el.textContent=css;document.head.appendChild(el)}
+  var banner=localStorage.getItem('aks_banner');
+  if(banner){var b=document.createElement('div');b.style.cssText='background:linear-gradient(90deg,#FF5722,#FFC107);color:#000;text-align:center;padding:0.6rem 1rem;font-size:0.85rem;font-weight:600';b.textContent=banner;document.body.prepend(b)}
+})();
+</script>
+<div class="page-hero" style="background:linear-gradient(180deg,rgba(255,87,34,0.08),transparent)">
+  <div>
+    <div class="section-label">What I stand for</div>
+    <h1>THE MANIFESTO</h1>
+    <p>7 honest commitments. No empty promises.</p>
+  </div>
+</div>
+<section style="background:var(--navy2);padding-top:2rem">
+  <div class="manifesto-grid">
+    <div class="manifesto-card reveal">
+      <div class="card-num">01</div>
+      <span class="card-icon">🏆</span>
+      <div class="card-title">SPORTIFY House Cup</div>
+      <p class="card-detail">A year-long running trophy — points from every monthly inter-house event accumulate, one house crowned champion at the end of the year.</p>
+      <div class="card-caption">"One year. Every event. One champion house."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">02</div>
+      <span class="card-icon">💜</span>
+      <div class="card-title">SPORTIFY Her</div>
+      <p class="card-detail">One reserved spot for a girl in every team, in every event — because inclusion should be built into every game, not an afterthought.</p>
+      <div class="card-caption">"Every team, every event — a seat always reserved for SPORTIFY Her."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">03</div>
+      <span class="card-icon">🏠</span>
+      <div class="card-title">Monthly Inter-House Events</div>
+      <p class="card-detail">Every month, a new online competition between houses. Keeps the community engaged and competitive throughout the term.</p>
+      <div class="card-caption">"Every month, a new game. Every house, a new chance."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">04</div>
+      <span class="card-icon">📰</span>
+      <div class="card-title">Newsletter</div>
+      <p class="card-detail">Monthly newsletter covering event recaps, upcoming calendar, student sports spotlight and winners. Released consistently every month.</p>
+      <div class="card-caption">"Your monthly dose of everything SPORTIFY."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">05</div>
+      <span class="card-icon">🤝</span>
+      <div class="card-title">Mixed Level Teams</div>
+      <p class="card-detail">Every event team will have at least one Foundation or Diploma student — creating natural senior-junior bonds through sport.</p>
+      <div class="card-caption">"Every level, every team, every event."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">06</div>
+      <span class="card-icon">📺</span>
+      <div class="card-title">Watch Parties</div>
+      <p class="card-detail">Organised watch parties on G Meet for big matches — IPL, World Cup. Casual, fun, just students enjoying sport together.</p>
+      <div class="card-caption">"Big matches, better together."</div>
+    </div>
+    <div class="manifesto-card reveal">
+      <div class="card-num">07</div>
+      <span class="card-icon">🌍</span>
+      <div class="card-title">City Sports Meetups</div>
+      <p class="card-detail">Regular sports meetups happening across cities — different sport every time, just show up and play.</p>
+      <div class="card-caption">"Same city, same turf, same love for sport."</div>
+    </div></div>
+</section>
+<footer><p>Made with ❤️ for <span>SPORTIFY</span> · IIT Madras BS Degree Programme · 2026</p></footer>
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+</script>
+</body></html>
